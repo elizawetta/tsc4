@@ -20,23 +20,21 @@
   int n = matrixA.tlen();
   int m = matrixA.at(0).tlen();
   int p = matrixB.at(0).tlen();
-
   tuple mat = empty_tuple();
   tuple new_mat = empty_tuple();
-
   int i = 0;
   int j = 0; 
   int k = 0;
-  int hui = 0;
+  int h = 0;
   repeat (n) {
     repeat (p){
       repeat (m){
-        hui += matrixA.at(i).at(k) * matrixB.at(k).at(j);
+        h += matrixA.at(i).at(k) * matrixB.at(k).at(j);
         k += 1;
       }
-      k = 0;
-      new_mat~tpush(hui);
-      hui = 0;
+      k = 0;  
+      new_mat~tpush(h);
+      h = 0;
       j += 1;
     }
     j = 0;
