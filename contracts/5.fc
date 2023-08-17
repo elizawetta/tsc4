@@ -12,7 +12,7 @@
   1188518561323126046432205871807859915657177,
   1923063428480944139667114773918309212080528]
 -}
-
+(int) tlen (tuple t) asm "TLEN";
 () recv_internal() {
 }
 
@@ -29,6 +29,10 @@
   tuple fib = empty_tuple();
   repeat (k){
     fib~tpush(f0);
+    if ((n + k == 371) & (fib.tlen() == k - 1)){
+      fib~tpush(f1);
+      return fib;
+    }
     fk = f0 + f1;
     f0 = f1;
     f1 = fk;
