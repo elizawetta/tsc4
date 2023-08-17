@@ -30,9 +30,7 @@
     n1 = n - 1;    
   }
   repeat (n1){
-    fk = f0 + f1;
-    f0 = f1;
-    f1 = fk;
+    (f0, f1) = (f1, f0 + f1);
   }
   if (n == 370){
     fib~tpush(f1);
@@ -47,9 +45,7 @@
     if (fib.tlen() == k){
       return fib;
     }
-    fk = f0 + f1;
-    f0 = f1;
-    f1 = fk;
+    (f0, f1) = (f1, f0 + f1);
   }  
   return fib;
 }
