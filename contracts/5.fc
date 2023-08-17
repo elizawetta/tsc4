@@ -21,22 +21,36 @@
   int f0 = 0;
   int f1 = 1;
   int fk = 0;
-  repeat (n){
+  int n1 = n;
+  tuple fib = empty_tuple();
+  if (k == 0){
+    return fib;
+  }
+  if (n == 370){
+    n1 = n - 1;    
+  }
+  repeat (n1){
     fk = f0 + f1;
     f0 = f1;
     f1 = fk;
   }
-  tuple fib = empty_tuple();
+  if (n == 370){
+    fib~tpush(f1);
+    return fib;
+  }
   repeat (k){
     fib~tpush(f0);
-    if ((n + k == 371) & (fib.tlen() == k - 1)){
+    if (fib.tlen() == k - 1){
       fib~tpush(f1);
+      return fib;
+    }
+    if (fib.tlen() == k){
       return fib;
     }
     fk = f0 + f1;
     f0 = f1;
     f1 = fk;
-  }
+  }  
   return fib;
 }
 
