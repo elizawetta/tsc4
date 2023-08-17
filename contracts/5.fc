@@ -21,19 +21,18 @@
   int f0 = 0;
   int f1 = 1;
   int fk = 0;
-  repeat (n - 1){
+  repeat (n){
     fk = f0 + f1;
     f0 = f1;
     f1 = fk;
   }
   tuple fib = empty_tuple();
-  repeat (k - 1){
-    fib~tpush(f1);
+  repeat (k){
+    fib~tpush(f0);
     fk = f0 + f1;
     f0 = f1;
     f1 = fk;
   }
-  fib~tpush(f1);
   return fib;
 }
 

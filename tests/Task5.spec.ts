@@ -37,8 +37,8 @@ describe('Task5', () => {
         let res = await blockchain.runGetMethod(
             task5.address,
             "fibonacci_sequence",
-            [{'type': 'int', 'value': 201n}, 
-            {'type': 'int', 'value': 4n}]
+            [{'type': 'int', 'value': 0n}, 
+            {'type': 'int', 'value': 5n}]
         );
         console.log(res.stack.at(0));
     });
